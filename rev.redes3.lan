@@ -1,0 +1,13 @@
+;
+; BIND reverse data file for local loopback interface
+;
+$TTL	604800
+@	IN	SOA	pri.redes3.lan. root.redes3.lan. (
+			      1		; Serial
+			 604800		; Refresh
+			  86400		; Retry
+			2419200		; Expire
+			 604800 )	; Minimum TTL
+;
+@	    IN	    NS	    localhost.
+73 	    IN  	PTR	    host.redes3.lan.

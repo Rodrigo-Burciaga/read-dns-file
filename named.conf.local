@@ -1,0 +1,25 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "redes3.lan" in {
+	type master;
+	file "/etc/bind/for.redes3.lan";
+	allow-transfer { key master; } ;
+	allow-query { any; };
+	also-notify { 192.168.1.66; };
+	notify yes;
+};
+
+zone "1.168.192.in-addr.arpa" {
+	type master;
+	file "/etc/bind/rev.redes3.lan";
+	allow-transfer { key master; } ;
+	allow-query { any; };
+	also-notify { 192.168.1.66; };
+	notify yes;
+};

@@ -1,0 +1,25 @@
+//
+// Do any local configuration here
+//
+
+// Consider adding the 1918 zones here, if they are not used in your
+// organization
+//include "/etc/bind/zones.rfc1918";
+
+zone "redes" in { 
+	type master;
+	file "for";
+	allow-transfer { key master; };
+	allow-query { any; };
+	also-notify { 12; };
+	notify yes;
+};
+
+zone "9.in-addr.arpa" in { 
+	type master;
+	file "rev";
+	allow-transfer { key master; };
+	allow-query { any; };
+	also-notify { 12; };
+	notify yes;
+};

@@ -1,0 +1,4 @@
+key master {
+	algorithm hmac-md5;
+	secret "s6qbL/H014wyrA18UxEkOw==";
+};
